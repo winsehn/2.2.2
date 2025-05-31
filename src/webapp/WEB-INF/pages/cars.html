@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <a href="?count=1"> 1 cars </a><br>
+    <a href="?count=2"> 2 cars </a><br>
+    <a href="?count=3"> 3 cars </a><br>
+    <a href="?count=5"> 5 cars </a><br>
+    <a href="/"> Return Main</a>
+</div>
+<div>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.model}">Model</td>
+            <td th:text="${car.color}">Color</td>
+            <td th:text="${car.year}">Year</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
